@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Homepage</title>
+  <style>
+  body {
+  min-height: 120vh; 
+}
+
+  body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-image: url('back.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed; /* Optional: makes it stay in place when scrolling */
+	}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+	.slideshow-container {
+		max-width: 500px;
+		position: relative;
+		margin: auto;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	}
+
+	.mySlides {
+		display: none;
+	}
+
+	.mySlides img {
+		width: 100%;
+		border-radius: 10px;
+	}
+
+	.fade {
+	animation: fade 1s ease-in-out;
+	}
+
+	@keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <a href="index.html" id="home-link">Home</a>
+  <a href="Background.html" id="Background-link">Background</a>
+  <a href="education.html"id="education-link">Education</a>
+  <a href="gallery.html" id="Gallery-link">Gallery</a>
+  <a href="contact.html" id="contact-link">Contact</a>
+</nav>
+
+<main>
+  <div>
+    <h1 style="font-size: 50px; font-weight: bold; color: #ff3c38; margin-bottom: 10px;">Hi, I'm Bennard</h1>
+    <p style="font-size: 22px; font-weight: bold; color: black;">Product Designer | Graphic Designer</p>
+  </div>
+  <div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="ben 1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="ben 2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="ben 3.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="ben 4.jpg" style="width:100%">
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 My Website. All rights reserved.</p>
+</footer>
+
+<audio id="bg-music" loop>
+  <source src="background.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  document.getElementById("home-link").addEventListener("click", function (event) {
+    event.preventDefault();
+    const audio = document.getElementById("bg-music");
+    audio.play();
+  });
+</script>
+<footer>
+  <p>Current time: <span id="clock"></span>    &copy; 2025 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString(); // Format: HH:MM:SS
+    document.getElementById("clock").textContent = timeString;
+  }
+
+  setInterval(updateTime, 1000); 
+  updateTime(); 
+</script>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); 
+  }
+</script>
+
+
+</body>
+</html>
